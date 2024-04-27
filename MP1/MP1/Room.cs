@@ -22,17 +22,5 @@ namespace MP1
         {
             return $"Room Name: {_roomName}, Building Name: {_buildingName}, Number of Stories: {_numberOfStory}, Capacity: {_capacity}";
         }
-
-        // Metoda do ustawienia atrybutu złożonego (adres)
-        public void SetAddress(Address address)
-        {
-            base.address = address;
-        }
-
-        // Metoda do ustawienia atrybutu klasowego (liczba pracowników)
-        public static void SetMaxPeopleInBuilding(int maxPeople)
-        {
-            maxPeopleInBuilding = maxPeople;
-        }
     }
 }

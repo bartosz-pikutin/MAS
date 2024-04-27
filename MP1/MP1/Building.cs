@@ -18,4 +18,9 @@ public class Building
         this._buildingName = buildingName;
         this._numberOfStory = numberOfStory;
     }
+    public override string ToString()
+    {
+        return $"Building_name: {_buildingName}, Number of Stories: {_numberOfStory}, Address: {address}, Capacity: {maxPeopleInBuilding}";
+    }
+    
 }
