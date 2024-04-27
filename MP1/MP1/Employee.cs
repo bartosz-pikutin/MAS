@@ -25,8 +25,6 @@ public class Employee
 
     // Atrybut klasowy (czy zna Angielski)
     public static bool _doesSpeakEnglish = true;
-
-    //private static int zarobki = 
     
     //Atrybut pochodny
     public int _age;
