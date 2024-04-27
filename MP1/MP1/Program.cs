@@ -35,11 +35,6 @@ class Program
         emp1.AddSkill("Python");
         emp2.AddSkill("C++");
         
-        
-        
-        
-        // Dodawanie pracowników do listy
-        
 
         // Serializacja wszystkich pracowników do JSON
         
