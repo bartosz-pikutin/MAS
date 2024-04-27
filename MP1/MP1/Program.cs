@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using MP1;
 using System.Text.Json;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine(DateTime.Today.Year);
         // Tworzenie obiektów pracowników
-        Employee emp1 = new Employee("John Doe", 30, 50000, 1980, true);
-        Employee emp2 = new Employee("Jane Smith", 25, 45000, 1989, false);
+        Employee emp1 = new Employee("John Doe",50000, 1980, true);
+        
+        
+        Employee emp2 = new Employee("Jane Smith",45000, 1989, false);
 
         Address address1 = new Address("Korkowa 22", "Warszawa", 00020);
         Address address2 = new Address("Zlota 23", "Sulejowek", 05070);
@@ -28,6 +31,24 @@ class Program
         emp1.AddSkill("Java");
         emp1.AddSkill("Python");
         emp2.AddSkill("C++");
+        Employees allEmployees = new Employees();
+        Addresses allAddresses = new Addresses();
+
+        allAddresses.AddAddress(emp1.Address);
+        allAddresses.AddAddress(emp2.Address);
+        allAddresses.AddAddress(address1);
+        allAddresses.AddAddress(address2);
+        
+        // Dodawanie pracowników do listy
+        allEmployees.AddEmployee(emp1);
+        allEmployees.AddEmployee(emp2);
+
+        // Serializacja wszystkich pracowników do JSON
+        string allAdressesJson = allAddresses.SerializeAllToJson();
+        string allEmployeesJson = allEmployees.SerializeAllToJson();
+        File.WriteAllText("EmployeeData.json", allEmployeesJson);
+        File.WriteAllText("AddressData.json", allAdressesJson);
+        
 
         // Wyświetlanie pracowników
         Console.WriteLine(emp1);
