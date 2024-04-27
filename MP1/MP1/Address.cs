@@ -2,9 +2,9 @@
 
 public class Address
 {
-    private string street;
-    private string city;
-    private int zipCode;
+    public string street;
+    public string city;
+    public int zipCode;
 
     // Konstruktor
     public Address(string street, string city, int zipCode)
